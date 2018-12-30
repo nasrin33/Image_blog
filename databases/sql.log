@@ -1,0 +1,273 @@
+timestamp: 2018-12-15T17:16:28.015000
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "first_name" CHAR(128),
+    "last_name" CHAR(128),
+    "email" CHAR(512),
+    "password" CHAR(512),
+    "registration_key" CHAR(512),
+    "reset_password_key" CHAR(512),
+    "registration_id" CHAR(512)
+);
+success!
+timestamp: 2018-12-15T17:16:28.109000
+CREATE TABLE "auth_group"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "role" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2018-12-15T17:16:28.223000
+CREATE TABLE "auth_membership"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2018-12-15T17:16:28.315000
+CREATE TABLE "auth_permission"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
+    "name" CHAR(512),
+    "table_name" CHAR(512),
+    "record_id" INTEGER
+);
+success!
+timestamp: 2018-12-15T17:16:28.549000
+CREATE TABLE "auth_event"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "time_stamp" TIMESTAMP,
+    "client_ip" CHAR(512),
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "origin" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2018-12-15T17:16:28.795000
+CREATE TABLE "auth_cas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "created_on" TIMESTAMP,
+    "service" CHAR(512),
+    "ticket" CHAR(512),
+    "renew" CHAR(1)
+);
+success!
+timestamp: 2018-12-15T17:17:52.277000
+CREATE TABLE "image"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "title" CHAR(512) UNIQUE,
+    "file" CHAR(512)
+);
+success!
+timestamp: 2018-12-15T17:17:52.579000
+CREATE TABLE "post"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "image_id" INTEGER REFERENCES "image" ("id") ON DELETE CASCADE  ,
+    "author" CHAR(512),
+    "email" CHAR(512),
+    "body" TEXT
+);
+success!
+timestamp: 2018-12-16T00:15:22.477000
+CREATE TABLE "person"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(512)
+);
+success!
+timestamp: 2018-12-16T17:17:18.492000
+CREATE TABLE "images"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "image" CHAR(512)
+);
+success!
+success!
+timestamp: 2018-12-19T00:30:21.130000
+CREATE TABLE "images2"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "image" CHAR(512)
+);
+success!
+timestamp: 2018-12-19T02:15:14.941000
+ALTER TABLE "images2" ADD "image2" CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2018-12-19T22:07:32.441000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:08:10.261000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:08:32.937000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:09:10.448000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:09:12.624000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:09:30.785000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:09:33.659000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:09:38.459000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:09:43.358000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:10:10.279000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:10:19.143000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-19T22:10:34.903000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-20T00:25:46.744000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-20T00:26:20.897000
+ALTER TABLE "images2" ADD "title" CHAR(512) UNIQUE;
+timestamp: 2018-12-20T00:26:45.292000
+ALTER TABLE "images2" ADD "title" CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2018-12-20T00:28:04.071000
+CREATE TABLE "Android_images"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "title" CHAR(512),
+    "file" CHAR(512)
+);
+success!
+timestamp: 2018-12-20T00:29:19.487000
+CREATE TABLE "android_image"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "title" CHAR(512),
+    "file" CHAR(512)
+);
+success!
